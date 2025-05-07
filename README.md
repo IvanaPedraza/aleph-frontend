@@ -1,65 +1,43 @@
 # Aleph Frontend
 
-Este es el repositorio del frontend para el proyecto Aleph.
+Frontend de la aplicación Aleph desarrollado con Next.js y Tailwind CSS.
 
-## Tecnologías utilizadas
+## Estructura del proyecto
+
+El proyecto está organizado en las siguientes carpetas:
+
+- `app/`: Contiene las páginas y componentes principales de la aplicación
+- `components/`: Componentes reutilizables, incluyendo UI y layout
+- `lib/`: Utilidades y funciones auxiliares
+- `public/`: Archivos estáticos como imágenes
+- `styles/`: Estilos globales
+
+## Tecnologías
 
 - Next.js
-- React
 - TypeScript
 - Tailwind CSS
 - Shadcn UI
 
-## Configuración del entorno de desarrollo
+## Instalación
 
-### Requisitos previos
-
-- Node.js (versión recomendada: >= 18.x)
-- pnpm (gestor de paquetes)
-- Git
-
-### Instalación
-
-1. Clonar el repositorio:
-```bash
-git clone [URL_DEL_REPOSITORIO]
-cd aleph-front
-```
-
-2. Instalar dependencias:
-```bash
+<!-- ```bash
+# Instalar dependencias
 pnpm install
-```
 
-3. Iniciar el servidor de desarrollo:
-```bash
+# Iniciar servidor de desarrollo
 pnpm dev
-```
+``` -->
 
-4. Abrir http://localhost:3000 en el navegador
 
-### Desarrollo con Docker
+## Docker
 
-También es posible utilizar Docker para el desarrollo:
+<!-- El proyecto incluye configuración para Docker:
 
 ```bash
-docker-compose up
+# Desarrollo
+docker-compose up -f docker-compose.yml
+
+# Producción
+docker build -t aleph-frontend . -->
 ```
-
-## Estructura del proyecto
-
-- `app/`: Componentes y páginas principales de la aplicación (Next.js App Router)
-- `components/`: Componentes reutilizables de la UI
-- `lib/`: Utilidades y funciones comunes
-- `hooks/`: Hooks personalizados de React
-- `styles/`: Estilos globales
-
-## Colaboración
-
-Para colaborar en este proyecto, por favor sigue estos pasos:
-
-1. Crea una rama para tu característica o corrección (`git checkout -b feature/amazing-feature`)
-2. Realiza tus cambios
-3. Haz commit de tus cambios (`git commit -m 'Add some amazing feature'`)
-4. Haz push a la rama (`git push origin feature/amazing-feature`)
-5. Abre un Pull Request
