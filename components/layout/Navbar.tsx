@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Music, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +24,7 @@ export default function Navbar() {
 
   const navigation = [
     // { name: "About Us", href: "/about-us" },
+    { name: "Play now", href: "/music-player" },
     { name: "Lanzamientos", href: "/lanzamientos" },
     { name: "Ranking", href: "/ranking" },
     { name: "Albums", href: "/albums" },
@@ -39,8 +41,7 @@ export default function Navbar() {
     >
       {/* Logo */}
       <Link href="/" className="text-2xl font-bold tracking-tight flex items-center gap-2 z-50">
-        <Music className="h-6 w-6 text-purple-300" />
-        <span>Aleph</span>
+        <Image src="/Logo - Aleph.png" alt="Logo" width={150} height={100} />
       </Link>
       
       {/* Desktop Navigation */}
