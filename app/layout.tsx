@@ -23,7 +23,10 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Navbar />
-        {children}
+        <div className="h-20"></div> {/* Espaciador para compensar el navbar fijo */}
+        <main className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
