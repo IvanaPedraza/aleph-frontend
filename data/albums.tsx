@@ -59,4 +59,10 @@ export const albums = [
         artist: "Coldplay",
         coverUrl: "/placeholder.svg?height=200&width=200",
     },
+    {
+        id: 11,
+        title: "Renaissance",
+        artist: "Beyoncé",
+        coverUrl: "/placeholder.svg?height=200&width=200",
+    },
 ]
