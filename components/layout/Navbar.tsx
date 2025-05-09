@@ -41,7 +41,7 @@ export default function Navbar() {
     >
       {/* Logo */}
       <Link href="/" className="text-2xl font-bold tracking-tight flex items-center gap-2 z-50">
-        <Image src="/Logo - Aleph.png" alt="Logo" width={150} height={100} />
+        <Image src="/Logo.png" alt="Logo" width={150} height={100} />
       </Link>
       
       {/* Desktop Navigation */}
