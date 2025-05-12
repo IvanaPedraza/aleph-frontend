@@ -58,10 +58,10 @@ export default function Navbar() {
           ))}
         </nav>
         <Link 
-          href="/contact" 
+          href="/login" 
           className="text-sm border border-white/20 px-5 py-2 rounded-full hover:bg-white/10 transition-colors"
         >
-          Registrate!
+          Iniciar sesión
         </Link>
       </div>
       
