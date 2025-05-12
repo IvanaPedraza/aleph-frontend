@@ -17,7 +17,7 @@ export default function LoginPage() {
     return (
         <div className="min-h-screen bg-black text-white relative overflow-hidden">
             {/* Welcome title */}
-            <div className="absolute top-24 right-14 z-50">
+            <div className="absolute top-24 right-14 z-40">
                 <h1 className="text-4xl md:text-6xl font-bold text-white text-center">¡Bienvenido<br></br> a Aleph!</h1>
             </div>
             
@@ -25,7 +25,7 @@ export default function LoginPage() {
             <div className="absolute top-44 left-1/2 transform -translate-x-1/2 -translate-y-1/3 z-20">
                 <div className="relative min-w-[700px] mx-auto">
                     <Image
-                        src="/vinilo.png"
+                        src="/Vinilo.png"
                         alt="Vinyl Record"
                         width={900}
                         height={500}
