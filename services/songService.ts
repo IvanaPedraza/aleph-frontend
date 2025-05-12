@@ -37,8 +37,20 @@ export interface Artist {
   popularity?: number;
 }
 
-// URL base del microservicio - Usa la variable de entorno si está disponible, de lo contrario usa localhost
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
+// URL base del microservicio - Usamos diferentes estrategias
+// Opción 1: URL directa al microservicio (funciona pero podría ser bloqueada por extensiones)
+// const API_URL = 'http://localhost:3001/api/v1';
+  
+// Opción 2: Usar proxy de Next.js en la ruta /api (podría ser bloqueada por extensiones)
+// const API_URL = '/api/v1';
+
+// Opción 3: Usar proxy de Next.js en una ruta alternativa para evitar bloqueos
+const API_URL = '/_data/v1';
+
+// Opción 4: Usar URL relativa al host actual (útil si accedemos por IP de Docker)
+// const API_URL = (typeof window !== 'undefined')
+//   ? `${window.location.protocol}//${window.location.host}/_data/v1`
+//   : 'http://songs-ms:3001/api/v1';
 
 // Función para obtener todas las canciones
 export async function getAllSongs(): Promise<Song[]> {
