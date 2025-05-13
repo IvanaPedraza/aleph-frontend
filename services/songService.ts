@@ -37,6 +37,22 @@ export interface Artist {
   popularity?: number;
 }
 
+// Interfaz para géneros musicales
+export interface Genre {
+  id: string;
+  name: string;
+  slug: string;
+  count: number;
+}
+
+// Interfaz para categorías musicales (agrupación de géneros)
+export interface Category {
+  id: string;
+  name: string;
+  genres: Genre[];
+  color?: string; // Para mantener la compatibilidad con la visualización actual
+}
+
 // URL base del microservicio - Usamos diferentes estrategias
 // Opción 1: URL directa al microservicio (funciona pero podría ser bloqueada por extensiones)
 // const API_URL = 'http://localhost:3001/api/v1';
@@ -112,6 +128,59 @@ export async function getArtistById(id: string): Promise<Artist> {
     return response.json();
   } catch (error) {
     console.error(`Error fetching artist with id ${id}:`, error);
+    throw error;
+  }
+}
+
+// Función para obtener todas las categorías de géneros musicales
+export async function getAllCategories(): Promise<Category[]> {
+  try {
+    const response = await fetch(`${API_URL}/categories`);
+    
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+    
+    // Obtener las categorías de la API
+    const categories = await response.json();
+    
+    // Asignar colores aleatorios a las categorías para el UI
+    const colorOptions = [
+      'from-red-500 to-orange-500',
+      'from-blue-500 to-indigo-600',
+      'from-purple-500 to-pink-500',
+      'from-green-500 to-emerald-500',
+      'from-amber-500 to-yellow-500',
+      'from-teal-500 to-cyan-500',
+      'from-fuchsia-500 to-violet-500',
+      'from-rose-500 to-red-500',
+      'from-indigo-500 to-blue-500',
+      'from-emerald-500 to-teal-500',
+    ];
+    
+    // Asignar un color a cada categoría
+    return categories.map((category: Category, index: number) => ({
+      ...category,
+      color: colorOptions[index % colorOptions.length]
+    }));
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    throw error;
+  }
+}
+
+// Función para obtener todos los géneros musicales
+export async function getAllGenres(): Promise<Genre[]> {
+  try {
+    const response = await fetch(`${API_URL}/genres`);
+    
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+    
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching genres:', error);
     throw error;
   }
 }
