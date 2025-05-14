@@ -1,12 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import "./globals.css"
 
 import Navbar from "@/components/layout/Navbar"
 import ConditionalFooter from "@/components/layout/ConditionalFooter"
 
-const inter = Inter({ subsets: ["latin"] })
+const montserrat = Montserrat({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Aleph - Música y Cultura",
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+      <body className={`${montserrat.className} min-h-screen flex flex-col`}>
         <Navbar />
         <div className="h-20"></div> {/* Espaciador para compensar el navbar fijo */}
         <main className="flex-1">
