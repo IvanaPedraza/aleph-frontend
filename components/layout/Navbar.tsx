@@ -59,9 +59,9 @@ export default function Navbar() {
         </nav>
         <Link 
           href="/login" 
-          className="text-sm border border-white/20 px-5 py-2 rounded-full hover:bg-white/10 transition-colors"
+          className="text-sm border border-white/20 px-5 py-2 bg-electricViolet rounded-full hover:bg-white/10 transition-colors"
         >
-          Iniciar sesión
+          Iniciar Sesión
         </Link>
       </div>
       

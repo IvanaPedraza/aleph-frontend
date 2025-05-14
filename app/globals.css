@@ -33,6 +33,14 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    /*paleta de Aleph*/
+    --electric-violet: 271 96% 52%;
+    --persian-indigo: 250 64% 30%;
+    --federal-blue: 264 87% 18%;
+    --mauve: 259 79% 83%;
+    --rich-black: 237 42% 9%;
+    --white: 0 0% 100%;
   }
 
   .dark {
