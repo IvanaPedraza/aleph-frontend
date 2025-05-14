@@ -20,6 +20,12 @@ const config = {
     },
     extend: {
       colors: {
+        electricViolet: 'hsl(var(--electric-violet) / <alpha-value>)',
+        persianIndigo: 'hsl(var(--persian-indigo) / <alpha-value>)',
+        federalBlue: 'hsl(var(--federal-blue) / <alpha-value>)',
+        mauve: 'hsl(var(--mauve) / <alpha-value>)',
+        richBlack: 'hsl(var(--rich-black) / <alpha-value>)',
+        customWhite: 'hsl(var(--white) / <alpha-value>)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

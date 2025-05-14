@@ -1,11 +1,15 @@
 "use client"
 
 import { useState } from "react"
+import google_Icon from "@/public/logo_google.png"
 import Image from "next/image"
 import Link from "next/link"
 import { Eye, EyeOff } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+/*importar el global para tener la paleta de colores*/
+import "@/app/globals.css"
+
 
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false)
@@ -47,77 +51,83 @@ export default function LoginPage() {
 
             {/* Login form container */}
             <div className="w-full rounded-t-3xl z-10 absolute bottom-0 flex content-center justify-center bg-gradient-to-t from-black to-transparent">
-                <div className="lg:basis-[50%] sm:basis-[80%] bg-violet-400 pt-24 px-32 pb-8 rounded-t-3xl ">
-                    <h2 className="text-2xl font-bold text-black mb-6">Iniciar Sesión</h2>
+                <div className=" lg:basis-[50%] sm:basis-[50%] bg-violet-400 pt-24 px-32 pb-8 rounded-t-3xl ">
 
                     <form className="space-y-4">
-                        <div className="space-y-2">
-                            <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                                Correo electrónico o usuario
+                        <div className="space-y-2 sm:w-[70%] mx-auto  ">
+                            <label
+                                htmlFor="email"
+                                className="block text-xl font-bold text-electricViolet text-center sm:text-left sm:ml-6 "
+                            >
+                                Nombre de Usuario:
                             </label>
-                            <Input id="email" type="text" placeholder="ejemplo@correo.com" className="w-full text-gray-950" />
+                            <Input
+                                id="email"
+                                type="text"
+                                placeholder="Usuario"
+                                className="w-[90%] sm:w-[70%] text-gray-950 mx-auto"
+                            />
                         </div>
 
-                        <div className="space-y-2">
-                            <label htmlFor="password" className="text-sm font-medium text-gray-700">
-                                Contraseña
+                        <div className="space-y-2 sm:w-[70%] mx-auto ">
+                            <label
+                                htmlFor="password"
+                                className="block text-xl font-bold text-electricViolet text-center sm:text-left sm:ml-6"
+                            >
+                                Contraseña:
                             </label>
-                            <div className="relative">
+                            <div className="relative w-[90%] sm:w-[70%] mx-auto">
                                 <Input
-                                    id="password"
-                                    type={showPassword ? "text" : "password"}
-                                    placeholder="••••••••"
-                                    className="w-full pr-10 text-gray-950"
+                                id="password"
+                                type={showPassword ? "text" : "password"}
+                                placeholder="••••••••"
+                                className="pr-10 text-gray-950"
                                 />
                                 <button
-                                    type="button"
-                                    onClick={togglePasswordVisibility}
-                                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                                type="button"
+                                onClick={togglePasswordVisibility}
+                                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
                                 >
-                                    {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                                {showPassword ? <EyeOff className="h-5 w-5 text-electricViolet" /> : <Eye className="h-5 w-5 text-electricViolet" />}
                                 </button>
                             </div>
                         </div>
-
-                        <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">
-                            Iniciar Sesión
-                        </Button>
+                        <div className="flex justify-center w-[30%] mx-auto ">
+                            <Button type="submit" className=" font-bold text-lg text-white bg-electricViolet  hover:bg-mauve shadow-lg">
+                                ¡Ingresa!
+                            </Button>
+                        </div>
+                        
 
                         <div className="relative my-6">
-                            <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-gray-300"></div>
-                            </div>
                             <div className="relative flex justify-center text-sm">
-                                <span className="px-2 bg-white text-gray-500">O continuar con</span>
+                                <span className="px-2 text-persianIndigo">O puedes continuar con</span>
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
-                            <Button variant="outline" className="w-full border-gray-300 text-black">
-                                <Image src="/placeholder.svg?height=20&width=20" alt="Google" width={20} height={20} className="mr-2" />
-                                Google
-                            </Button>
-                            <Button variant="outline" className="w-full border-gray-300 text-black">
+                        <div className=" flex justify-center ">
+                            <Button variant="outline" className="w-[70%] border-none text-electricViolet  hover:bg-mauve">
                                 <Image
-                                    src="/placeholder.svg?height=20&width=20"
-                                    alt="Spotify"
+                                    src={google_Icon}
+                                    alt="Google Icon"
                                     width={20}
                                     height={20}
-                                    className="mr-2"
-                                />
-                                Spotify
+                                    className="mr-2">
+
+                                    </Image>
+                                Google
                             </Button>
                         </div>
 
-                        <div className="text-center text-sm text-gray-600 space-y-2 mt-6">
+                        <div className="text-center text-sm text-white space-y-2 mt-6">
                             <p>
                                 ¿No tienes una cuenta?{" "}
-                                <Link href="/register" className="text-purple-600 hover:underline">
-                                    Regístrate
+                                <Link href="/register" className="text-electricViolet hover:underline">
+                                    ¡Regístrate!
                                 </Link>
                             </p>
                             <p>
-                                <Link href="/forgot-password" className="text-purple-600 hover:underline">
+                                <Link href="/forgot-password" className="text-electricViolet hover:underline">
                                     ¿Olvidaste tu contraseña?
                                 </Link>
                             </p>
